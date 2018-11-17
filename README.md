@@ -2,7 +2,7 @@
 
 If you ever wished you could have access to Android CMD API from your AIR application, this is the ANE you were looking for.
 
-* [Click here for ASDOC](http://myflashlab.github.io/asdoc/com/myflashlab/air/extensions/cmd/CMD.html)
+* [Click here for ASDOC](https://myflashlab.github.io/asdoc/com/myflashlab/air/extensions/cmd/CMD.html)
 * [See the ANE setup requirements](https://github.com/myflashlab/CMD-ANE/blob/master/src/ANE/extension.xml)
 
 **IMPORTANT:** Implementing ANEs in your AIR projects means you may be required to add some [dependencies](https://github.com/myflashlab/common-dependencies-ANE) or copy some frameworks or editing your app's manifest file. Our ANE setup instruction is designed in a human-readable format but you may still need to familiarize yourself with this format. [Read this post for more information](https://www.myflashlabs.com/understanding-ane-setup-instruction/)
