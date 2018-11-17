@@ -1,0 +1,10 @@
+<platform xmlns="http://ns.adobe.com/air/extension/25.0">
+
+	<packagedResources>
+		<packagedResource>
+			<packageName>com.myflashlab.cmd</packageName>
+			<folderName>com.myflashlab.air.extensions.cmd-res</folderName>
+		</packagedResource>
+	</packagedResources>
+	
+</platform>
