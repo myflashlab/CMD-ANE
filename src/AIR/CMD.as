@@ -1,7 +1,6 @@
 package com.myflashlab.air.extensions.cmd
 {
 import flash.external.ExtensionContext;
-import flash.system.Capabilities;
 import flash.utils.getDefinitionByName;
 import flash.utils.getQualifiedClassName;
 import flash.events.StatusEvent;
@@ -13,18 +12,15 @@ import flash.events.StatusEvent;
  */
 public class CMD
 {
-	public static const ANDROID:String = "android";
-	public static const IOS:String = "ios";
+	private static const DEMO_ANE:Boolean = true;
 	
 	private var OverrideClass:Class;
 	
 	private static var _ex:CMD;
 	public static const EXTENSION_ID:String = "com.myflashlab.air.extensions.cmd";
-	public static const VERSION:String = "1.0.1";
+	public static const VERSION:String = "1.0.11";
 	
 	private var _context:ExtensionContext;
-	private var _os:String;
-	
 	private var _callback:Function;
 	
 	/** @private */
@@ -33,18 +29,11 @@ public class CMD
 		OverrideClass = getDefinitionByName("com.myflashlab.air.extensions.dependency.OverrideAir") as Class;
 		OverrideClass["applyToAneLab"](getQualifiedClassName(this));
 		
-		// find the current running OS
-		if(Capabilities.manufacturer.toLowerCase().indexOf(IOS) > -1) _os = IOS;
-		else if(Capabilities.manufacturer.toLowerCase().indexOf(ANDROID) > -1) _os = ANDROID;
-		else _os = "desktop";
-		
-		if(_os == "desktop" || _os == IOS) return;
-		
 		// initialize the context
 		_context = ExtensionContext.createExtensionContext(EXTENSION_ID, null);
 		_context.addEventListener(StatusEvent.STATUS, onStatus);
 		
-		if(CMD.DEMO_ANE) _context.call("command", "isTestVersion");
+		if(DEMO_ANE) _context.call("command", "isTestVersion");
 	}
 	
 	// ---------------------------------------------------------------------------------------- methods
@@ -82,14 +71,5 @@ public class CMD
 				break;
 		}
 	}
-	
-	// ---------------------------------------------------------------------------------------- properties
-	
-	
-	
-	// ------------------------------------------------------------------------------------------------------------------------------------ Check Club Member
-	
-	/** @private */
-	internal static const DEMO_ANE:Boolean = false;
 }
 }
