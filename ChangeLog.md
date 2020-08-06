@@ -1,4 +1,8 @@
-Android CMD AIR Native Extension
+# Android CMD AIR Native Extension
+
+*Aug 03, 2020 - v2.0.0*
+- Upgrade dependencies to the latest versions.
+- Fixed some minor issues and refactor native codes.
 
 *Aug 2, 2019 - V1.0.11*
 * Added Android 64-bit support
